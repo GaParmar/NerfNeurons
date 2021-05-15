@@ -117,7 +117,26 @@ The task of novel view synthesis is to reconstruct an unseen view given a number
     set of input images by using deep neural network. Among these methods, NeRF [2] is the most popular one in the area.
     NeRF adopts an MLP to learn a 5D radiance field of the scene by directly regresses the volume density and RGB colors.
     Since the camera pose is a part of input of the method, the output of NeRF can leverage the view-dependent effect of
-    the scene to some extent.
+    the scene to some extent. However, NeRF still suffers from the following limitations: (1) The inference time is high.
+    (2) The learnt representation is scene specific and it is hard to edit it accordingly.
+    <br>
+    <br>
+    To address the first issue, NSVF [7] reduce the inference time of NeRF by defining a set of voxel-bounded implicit
+    fields represented by sparse voxel octree to model local features in each cell. FastNeRF [8] presents
+    a NeRF-based system capable  of  rendering photorealistic  novel  views thousands of times faster than original NeRF.
+
+    For the second problem, GIRAFFE [9] combine a compositional 3D scene representation into the generative model to allow more controllable image synthesis.
+    Representing  scenes  as  compositional  generative  neural  feature  fields  allows  them to  disentangle
+    objects from the background so as to manipulate the scene. [10] propose to learn object-centric neural scattering functions (OSFs)
+    that can implicitly model object-level light transport using a neural network.
+    It enables rendering scenes even when objects or lights move without retraining.
+    <br>
+    <br>
+    The difference between our project and these methods are that we are focusing on study and understand NeRF, and then edit the scene
+    according to the insight we learn from the NeRF representation. We believe this can lead to a more general way to manipulate the scene
+    based on NeRF.
+
+
 
 <h3>Interpretable Networks</h3>
 [TODO: Ganseeing]
@@ -193,6 +212,11 @@ from a fixed camera pose and inspect the change induced by the perturbation.
 <p><a href="https://arxiv.org/pdf/1811.10597.pdf">[4] Marc  Levoy  and  Pat  Hanrahan.   Light  field  rendering.  SIGGRAPH 1996. </a>. </p>
 <p><a href="https://arxiv.org/pdf/1904.04290.pdf">[5] Moustafa Meshry, Dan B Goldman, Sameh Khamis, HuguesHoppe,  Rohit Pandey,  Noah Snavely, and Ricardo Martin-Brualla. Neural rerendering in the wild. CVPR, 2019. </a> </p>
 <p><a href="https://research.fb.com/publications/neural-volumes-learning-dynamic-renderable-volumes-from-images/">[6] Stephen  Lombardi,  Tomas  Simon,  Jason  Saragih,  GabrielSchwartz, Andreas Lehrmann, and Yaser Sheikh. Neural vol-umes:  Learning dynamic renderable volumes from images. ACM Trans. Graph. 2019. </a> </p>
+<p><a href="https://arxiv.org/abs/2007.11571">[7]  Lingjie  Liu,  Jiatao  Gu,  Kyaw  Zaw  Lin,  Tat-Seng  Chua,and Christian Theobalt.   Neural sparse voxel fields.arXivpreprint arXiv:2007.11571, 2020 </a> </p>
+<!--<p><a href="https://arxiv.org/abs/2010.07492">[8]   Kai  Zhang,  Gernot  Riegler,  Noah  Snavely,  and  VladlenKoltun.  Nerf++:  Analyzing and improving neural radiancefields.   arXiv preprint arXiv:2010.07492, 2020 </a> </p>-->
+<p><a href="https://arxiv.org/abs/2103.10380">[8]  Stephan J. Garbin, Marek Kowalski, Matthew Johnson, Jamie Shotton, Julien Valentin.  FastNeRF: High-Fidelity Neural Rendering at 200FPS. CVPR, 2021 </a> </p>
+<p><a href="https://arxiv.org/abs/2011.12100">[9]  Michael Niemeyer, Andreas Geiger. GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields. CVPR, 2021 </a> </p>
+<p><a href="https://arxiv.org/abs/2012.08503">[10]  Michelle Guo, Alireza Fathi, Jiajun Wu, Thomas Funkhouser. Object-Centric Neural Scene Rendering. CVPR, 2020 </a> </p>
 
 
 
