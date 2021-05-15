@@ -122,13 +122,19 @@ Finally, we show ABC in figs 123 <br>
 
 <br><br>
 <p style="margin-top:1cm;">
-<h2 align='center' style="color: #990000;"><strong>Experiments</strong></h2>
+<h2 align='center' style="color: #990000;"><strong>Results</strong></h2>
+<br>
+<h3>Grid Search over Neurons:</h3>
+We begin our experiments by investigating a traditional NeRF model that is trained on 
+the scene shown in Figure [TODO]. We iterate through all neurons in the trained model 
+one at a time and perturb its output by different scalar factors (1e-2, 1e-1, 10, 100, 100). 
+For each neuron and the corresponding perturbation applied, we observe render the scene 
+from a fixed camera pose and inspect the change induced by the perturbation. 
+<br>
+[Fig TODO: NeRF neuron-18] <br>
+[Fig TODO: NERF neuron-others-found] <br>
 
-
-<!-- <a href="https://arxiv.org/pdf/2011.10063.pdf">
-  <img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="resources/thumbnail.png" width=170>
-</a> -->
-
+<h3>Compositionality of Edits: </h3>
 
 <!-- 
 <table border="0" cellspacing="0" cellpadding="0">
