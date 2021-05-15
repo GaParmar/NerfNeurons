@@ -101,6 +101,7 @@ BODY {
     (1) We present a simple framework to study and edit NeRF representation.
 
     (2) We render a small dataset and conduct some experiments to show that our proposed framework can effectively study and manipulate the NeRF
+    representation.
 
 
 </p></div>
@@ -110,7 +111,13 @@ BODY {
 <h2 align='center' style="color: #990000;"><strong>Related Works</strong></h2>
 
 <h3>Novel View Synthesis</h3>
-[TODO: recent nerf explosion and short description of some followup works]
+<!--[TODO: recent nerf explosion and short description of some followup works]-->
+The task of novel view synthesis is to reconstruct an unseen view given a number of input views. [4] propose a light-field based method which can produce
+    realistic results but required a dense set of images. Recent methods [2][5][6] reconstruct novel views with a sparse
+    set of input images by using deep neural network. Among these methods, NeRF [2] is the most popular one in the area.
+    NeRF adopts an MLP to learn a 5D radiance field of the scene by directly regresses the volume density and RGB colors.
+    Since the camera pose is a part of input of the method, the output of NeRF can leverage the view-dependent effect of
+    the scene to some extent.
 
 <h3>Interpretable Networks</h3>
 [TODO: Ganseeing]
@@ -175,8 +182,13 @@ Finally, we show ABC in figs 123 <br>
 <br>
 <h2>Citation</h2>
 <p><a href="https://cseweb.ucsd.edu/~ravir/6998/papers/p279-chen.pdf">[1] Shenchang Eric Chen and Lance Williams. View interpolationfor image synthesis.SIGGRAPH, 1993 </a>. </p>
-<p><a href="https://arxiv.org/pdf/2102.13090.pdf">[2] Ben Mildenhall, Pratul P Srinivasan, Matthew Tancik,Jonathan T. Barron, Ravi Ramamoorthi, and Ren Ng.  Nerf: Representing scenes as neural radiance fields for view synthesis.ECCV, 2020. </a>. </p>
-<p><a href="https://arxiv.org/pdf/1811.10597.pdf">[3] David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman, Antonio Torralba.  Nerf: Representing scenes as neural radiance fields for view synthesis.ECCV, 2020. </a>. </p>
+<p><a href="https://arxiv.org/pdf/2102.13090.pdf">[2] Ben Mildenhall, Pratul P Srinivasan, Matthew Tancik,Jonathan T. Barron, Ravi Ramamoorthi, and Ren Ng.  Nerf: Representing scenes as neural radiance fields for view synthesis.ECCV, 2020. </a> </p>
+<p><a href="https://arxiv.org/pdf/1811.10597.pdf">[3] David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman, Antonio Torralba.  Nerf: Representing scenes as neural radiance fields for view synthesis.ECCV, 2020. </a> </p>
+<p><a href="https://arxiv.org/pdf/1811.10597.pdf">[4] Marc  Levoy  and  Pat  Hanrahan.   Light  field  rendering.  SIGGRAPH 1996. </a>. </p>
+<p><a href="https://arxiv.org/pdf/1904.04290.pdf">[5] Moustafa Meshry, Dan B Goldman, Sameh Khamis, HuguesHoppe,  Rohit Pandey,  Noah Snavely, and Ricardo Martin-Brualla. Neural rerendering in the wild. CVPR, 2019. </a> </p>
+<p><a href="https://research.fb.com/publications/neural-volumes-learning-dynamic-renderable-volumes-from-images/">[6] Stephen  Lombardi,  Tomas  Simon,  Jason  Saragih,  GabrielSchwartz, Andreas Lehrmann, and Yaser Sheikh. Neural vol-umes:  Learning dynamic renderable volumes from images. ACM Trans. Graph. 2019. </a> </p>
+
+
 
 
 
