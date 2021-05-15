@@ -164,7 +164,24 @@ Finally, we show ABC in figs 123 <br>
 <h3>Dataset Used: </h3>
 We create a basic scene containing 15 spheres using Mitsuba. To find semantically meaningful neurons for scene representation,
 we create 15 additional scenes, and each scene is same as the basic scene excepting for the removal of one specific sphere. We
-set the near and far bound to be 0 and 5 respectively. 
+set the near and far bound to be 0 and 5 respectively. In the figure below we show the initial scene containing all the 15 
+spheres on the left. In the right, we show one of the additional scene generated where one of the spheres is removed.
+<table border="0" cellspacing="0" cellpadding="0" style="margin-top:1cm;">
+  <tr>
+    <tr>
+        <td align="center" valign="middle">
+          <a href=".resources/ds_base.gif">
+            <img src="resources/ds_base.gif"  align="center" width=350>
+          </a>
+        </td>
+        <td align="center" valign="middle" style="padding-left:100px;">
+          <a href="resources/ds_edit_5.gif">
+            <img src="resources/ds_edit_5.gif"  align="center" width=350>
+          </a>
+        </td>
+    </tr>
+  </tr>
+</table>
 
 <h3>Baseline Model: </h3>
 We use a PyTorch implementation of NeRF provided <a href="https://github.com/yenchenlin/nerf-pytorch">here</a> for our experiments. 
@@ -180,8 +197,8 @@ process are shown in the Figure below.
   <tr>
     <tr>
         <td align="center" valign="middle">
-          <a href=".resources/arch.png">
-            <img src="resources/arch.png"  align="center" width=800>
+          <a href=".resources/architecture.png">
+            <img src="resources/architecture.png"  align="center" width=800>
           </a>
         </td>
     </tr>
