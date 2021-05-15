@@ -164,8 +164,8 @@ Finally, we show ABC in figs 123 <br>
 <h3>Dataset Used: </h3>
 We create a basic scene containing 15 spheres using Mitsuba. To find semantically meaningful neurons for scene representation,
 we create 15 additional scenes, and each scene is same as the basic scene excepting for the removal of one specific sphere. We
-set the near and far bound to be 0 and 5 respectively. 
-
+set the near (minimal scene depth for display) and far (maximum scene depth for display) bound to be 0 and 5 respectively.
+    
 <h3>Baseline Model: </h3>
 We use a PyTorch implementation of NeRF provided <a href="https://github.com/yenchenlin/nerf-pytorch">here</a> for our experiments. 
 We do not modify the training hyperparameters and use the default values provided by the authors. 
