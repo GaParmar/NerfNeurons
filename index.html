@@ -8,7 +8,7 @@
 
 <script src="src/lib.js" type="text/javascript"></script>
 <script src="src/popup.js" type="text/javascript"></script>
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 
 <script type="text/javascript">
 // redefining default features
@@ -111,7 +111,6 @@ BODY {
 <h2 align='center' style="color: #990000;"><strong>Related Works</strong></h2>
 
 <h3 style="color: #666666;">Novel View Synthesis</h3>
-<!--[TODO: recent nerf explosion and short description of some followup works]-->
 The task of novel view synthesis is to reconstruct an unseen view given a number of input views. [4] propose a light-field based method which can produce
     realistic results but required a dense set of images. Recent methods [2][5][6] reconstruct novel views with a sparse
     set of input images by using deep neural network. Among these methods, NeRF [2] is the most popular one in the area.
@@ -146,12 +145,42 @@ The task of novel view synthesis is to reconstruct an unseen view given a number
 <p style="margin-top:1cm;">
 <h2 align='center' style="color: #990000;"><strong>Preliminaries</strong></h2>
 
-<h3 style="color: #666666;">Vanilla NeRF:</h3>
-[TODO: describe the nerf formution precisely and mathematically]
+<h3>Vanilla NeRF:</h3>
+A scene can be modeled as a 5D vector-valued function \(F_{\Theta} \) who takes a 3D camera position  \( \mathbf{x} = (x,y,z)  \) and
+    a 2D viewing direction \( \mathbf{d} (\theta, \phi) \) as input, an color value \( \mathbf{c} = (r,g,b) \) and
+    volume density \( \sigma \) as output.
 
-<h3 style="color: #666666;">Latent Space and Overfitting:</h3>
-[TODO: no natural latent space] <br>
-[TODO: no generalization across scenes]
+Then we can render the color value of each pixel in our target image using principles from classical volume rendering.
+In specific, the volume density \( \sigma(\mathbf{x}) \) can be regarded as the probability that the ray
+    \(\mathbf{r}(t) = o + t \mathbf{d} \) will terminate at an infinitesimal particle  at location \( \mathbf{x} \), where \(t \) is
+    a depth constant. Now the color value of each ray (pixel) can be represented as:
+
+    $$
+    C(\mathbf{r}) = \int_{t_n}^{t_f} T(t) \sigma(\mathbf{r}(t) \mathbf{c}(\mathbf{r}(t), \mathbf{d})) dt,
+     $$
+    where \( T(t) =  - \int_{t_n}^{t} \sigma(\mathbf{r}(s))ds \), specifying the  probability of termination
+    of the ray travel from \( t_n \) to \( t \).
+
+    We show how to compute the color value of a ray in a continuous way. In practice, we cannot achieve
+    this due to the limitation of computational resource. Therefore, we can divide \( [t_n, t_f] \) into
+    \( N \) evenly-spaced  bins and draw one sample from the bins uniformly to get a set of \(t \).
+     we can write the discrete version of \(C(\mathbf{r}) \) with the quadrature rule:
+
+    $$
+    C(\mathbf{r}) = \sum_{i=1}^N T_i (1 - exp(\sigma_i \Delta_i)) \mathbf{c_i},     $$
+    where \(T_i = exp( - \sum_{j=1}^{i-1} \sigma_j \Delta_i) \)
+    and \(\Delta_i = t_{i+1} - t_i \) denote the distance betweem two sample positions.
+    Note that this calculation rewrite the traditional alpha value as
+    \( \alpha_i = 1 - exp(-\sigma_i \Delta_i) \).
+    Now we can compute the \( L2 \) loss between the groud truth and output color value
+    for the optimization of network parameter \( \Theta \). For more details, please refer to \
+    the original NeRF paper [2]. 
+
+
+
+<!--<h3>Latent Space and Overfitting:</h3>-->
+<!--[TODO: no natural latent space] <br>-->
+<!--[TODO: no generalization across scenes]-->
 
 
 <br><br>
