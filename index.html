@@ -157,24 +157,39 @@ Finally, we show ABC in figs 123 <br>
 <p style="margin-top:1cm;">
 <h2 align='center' style="color: #990000;"><strong>Experiments</strong></h2>
 <br>
-<h3>Grid Search over Neurons:</h3>
+<h3 style="color: #666666;">Grid Search over Neurons:</h3>
 We begin our experiments by investigating a traditional NeRF model that is trained on 
 the scene shown in Figure [TODO]. We iterate through all neurons in the trained model 
 one at a time and perturb its output by various scalar factors (1e-2, 1e-1, 10, 100, 100). 
 For each neuron and the corresponding perturbation applied, we observe render the scene 
 from a fixed camera pose and inspect the change induced by the perturbation. 
 <br>
-[<strong>FIGURE TODO ::: </strong> NeRF neuron-18]<br>
-[<strong>FIGURE TODO ::: </strong> other neurons found]<br>
-Using the procedure described above we search for a neuron that corresponds to the task of 
+Using this procedure above we search for a neuron that corresponds to the task of 
 removing a specific sphere from the scene. The 18th neuron in the first layer of network 
 is found to best correspond to this edit. In Figure XX above we show the edited scene generated 
 by perturbing this neuron. We observe that even the best perturbation does not capture the 
 desired edit in the scene and introduces numerous artifacts in the other regions of the image. 
+<br> <br>
+[<strong>FIGURE TODO ::: </strong> NeRF neuron-18]<br>
+[<strong>FIGURE TODO ::: </strong> other neurons found]
+<br><br>
 
-<h3>Quantiative Comparision: </h3>
+<h3 style="color: #666666;">Transformation Conditioned NeRF Training: </h3>
+We hypothesize that the training objective of the NeRF does not encourage the 
+learning of semantically neuron representations that are disentangled and control the attributes 
+in a consistent manner. In order to test this, we modify the NeRF training procedure as shown 
+in the Figure YY below. 
+<br> <br>
+[<strong>FIGURE TODO ::: </strong> modified NeRF training]
+<br><br>
+The Figure YY below shows that the modified NeRF training is capable of learning a more 
+semantic representation of the scene. The modified scene captures the desired edit 
+consistently across different camera poses and does not introduce severe artifects in 
+other parts of the scene. 
 
-<h3>Compositionality of Edits: </h3>
+<h3 style="color: #666666;">Quantiative Comparision: </h3>
+
+<h3 style="color: #666666;">Compositionality of Edits: </h3>
 
 <!-- 
 <table border="0" cellspacing="0" cellpadding="0">
