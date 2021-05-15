@@ -168,7 +168,7 @@ we create 15 additional scenes, and each scene is same as the basic scene except
 set the near (minimal scene depth for display) and far (maximum scene depth for display) bound to be 0 and 5 respectively. 
 In the figure below we show the initial scene containing all the 15 
 spheres on the left. In the right, we show one of the additional scene generated where one of the spheres is removed.
-<table border="0" cellspacing="0" cellpadding="0" style="margin-top:1cm;">
+<table border="0" cellspacing="0" cellpadding="0" style="margin-top:0cm;">
   <tr>
     <tr>
         <td align="center" valign="middle">
@@ -216,13 +216,30 @@ process are shown in the Figure below.
 <h2 align='center' style="color: #990000;"><strong>Experiments</strong></h2>
 <br>
 <h3 style="color: #666666;">Grid Search over Neurons:</h3>
-We begin our experiments by investigating a traditional NeRF model that is trained on 
-the scene shown in Figure [TODO]. We iterate through all neurons in the trained model 
+We begin our experiments by investigating the vanilla NeRF model that is trained on 
+the full scene (containing all 15 spheres). We iterate through all neurons in the trained model 
 one at a time and perturb its output by various scalar factors (1e-2, 1e-1, 10, 100, 100). 
-For each neuron and the corresponding perturbation applied, we observe render the scene 
-from a fixed camera pose and inspect the change induced by the perturbation. 
+For each neuron and the perturbation applied, we render the scene using a fixed camera pose 
+and inspect the change that is induced in the generated scene by the perturbation. 
 <br>
-Using this procedure above we search for a neuron that corresponds to the task of 
+Using this procedure above we attempt to find individual neurons that can control meaningful 
+attributes of the scene represented. In the figures below we show few interesting neurons that 
+correspond the "middle-row of spheres", "middle column of spheres", and "darkness of spheres". 
+<br>
+<table border="0" cellspacing="0" cellpadding="0" style="margin-top:0cm;">
+  <tr>
+    <tr>
+        <td align="center" valign="middle">
+          <a href=".resources/interesting_neurons.png">
+            <img src="resources/interesting_neurons.png"  align="center" width=800>
+          </a>
+        </td>
+    </tr>
+  </tr>
+</table>
+
+
+we search for a neuron that corresponds to the task of 
 removing a specific sphere from the scene. The 18th neuron in the first layer of network 
 is found to best correspond to this edit. In Figure XX above we show the edited scene generated 
 by perturbing this neuron. We observe that even the best perturbation does not capture the 
