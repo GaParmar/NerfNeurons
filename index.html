@@ -80,17 +80,19 @@ BODY {
     novel angles[1]. Recently, NeRF [2] makes significant progress in this area by utilizing neural scene representation. It takes as input
     a 5D camera pose representation and uses scene-specific multi-layer perceptrons (MLPs) to represent the whole scene. Compared to explict representation like
     point clouds and voxels, this representation is compact and able to reconstruct higher resolution images.
-
+    <br>
     Although NeRF performs well in many cases, it still has the following limitation: the learnt scene representation is very rigid and cannot be edited
     flexibly. In other words, all the scene details are fixed in the representation and it is hard to edit one small part without messing up the rest part of the scene.
     To illustrate, suppose we have learnt scene representation of the scene with 100 spheres. If we want to remove a sphere from the scene, we have to
     retrain the network instead of editing the learnt representation directly.
+    <br>
 
     To edit the scene representation in a more flexible way, we need to gain more understanding of  the learnt scene representation in different levels.
     Inspired by the recent paper [3] that tries to visualize and understand GAN at the unit-, object-, and scene-level, we present a simple framework to
     study NeRF representation. In specific, we try to answer the following questions: Are there some neurons responsible for controlling
     the emergence of an object in the scene? Can we edit the scene at instance level given a specific operation?
 
+    <br>
 
 
 </p></div>
