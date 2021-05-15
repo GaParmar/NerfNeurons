@@ -50,7 +50,7 @@ BODY {
 <center>
   <h2>
       <strong>
-          <a href="TBD">[Paper]</a> | 
+          <a href="TBD">[Report]</a> | 
           <a href="TBD">[GitHub]</a> |
           <a href="TBD">[YouTube]</a> |
           <a href="TBD">[Slides]</a>
@@ -142,22 +142,30 @@ Finally, we show ABC in figs 123 <br>
 <h3>Modified Training Procedure: </h3>
 [TODO: our modifications applied]
 <h3>Evaluation</h3>
+[TODO: the task is to remove a sphere from the scene] <br>
 [TODO: yikes]
 
 
 <br><br>
 <p style="margin-top:1cm;">
-<h2 align='center' style="color: #990000;"><strong>Results</strong></h2>
+<h2 align='center' style="color: #990000;"><strong>Experiments</strong></h2>
 <br>
 <h3>Grid Search over Neurons:</h3>
 We begin our experiments by investigating a traditional NeRF model that is trained on 
 the scene shown in Figure [TODO]. We iterate through all neurons in the trained model 
-one at a time and perturb its output by different scalar factors (1e-2, 1e-1, 10, 100, 100). 
+one at a time and perturb its output by various scalar factors (1e-2, 1e-1, 10, 100, 100). 
 For each neuron and the corresponding perturbation applied, we observe render the scene 
 from a fixed camera pose and inspect the change induced by the perturbation. 
 <br>
-[Fig TODO: NeRF neuron-18] <br>
-[Fig TODO: NERF neuron-others-found] <br>
+[<strong>FIGURE TODO ::: </strong> NeRF neuron-18]<br>
+[<strong>FIGURE TODO ::: </strong> other neurons found]<br>
+Using the procedure described above we search for a neuron that corresponds to the task of 
+removing a specific sphere from the scene. The 18th neuron in the first layer of network 
+is found to best correspond to this edit. In Figure XX above we show the edited scene generated 
+by perturbing this neuron. We observe that even the best perturbation does not capture the 
+desired edit in the scene and introduces numerous artifacts in the other regions of the image. 
+
+<h3>Quantiative Comparision: </h3>
 
 <h3>Compositionality of Edits: </h3>
 
