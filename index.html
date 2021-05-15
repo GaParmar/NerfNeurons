@@ -138,8 +138,8 @@ The task of novel view synthesis is to reconstruct an unseen view given a number
 
 
 
-<h3>Interpretable Networks</h3>
-[TODO: Ganseeing]
+<!--<h3>Interpretable Networks</h3>-->
+<!--[TODO: Ganseeing]-->
 
 
 <br><br>
@@ -162,8 +162,12 @@ First, we we describe XXX <br>
 Next, we describe YYY <br>
 Finally, we show ABC in figs 123 <br>
 <h3>Dataset Used: </h3>
-[TODO: describe the image used, how it is generated and why]
-<h3>Baseline Model: </h3>
+<!--[TODO: describe the image used, how it is generated and why]-->
+We create a basic scene containing 15 spheres using Mitsuba. To find semantically meaningful neurons for scene representation,
+    we create 15 additional scenes, and each scene is same as the basic scene excepting for the removal of one specific sphere. We
+    set the near and far bound to be 0 and 5 respectively. 
+
+    <h3>Baseline Model: </h3>
 [TODO: nerf with the architecuture and training details]
 <h3>Modified Training Procedure: </h3>
 [TODO: our modifications applied]
