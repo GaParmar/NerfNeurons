@@ -26,7 +26,8 @@ A:link {
 	COLOR: #990000
 }
 A:visited {
-	COLOR: #666666
+	COLOR: #990000
+	/* COLOR: #666666 */
 }
 LI {
 	MARGIN-TOP: 0px; font-size: 15px
