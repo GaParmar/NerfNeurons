@@ -67,7 +67,9 @@ BODY {
 <p style="margin-top:5cm;">
 <h2 style="color: #990000;"> <strong>Abstract </strong></h2>
 <div style="font-size:14px"><p align="justify">
-    [TODO: Summary of all results and conclusions]
+    Neural Radiance Fields (NeRF) achieve impressive results in novel view synthesis. However, it still suffers from the following problem:
+    the learnt scene representation is fixed and not allowed to be edited flexibly. In this project, we will study and understand the scene representation
+    at different levels, which will allow us to perform user-defined operations on the scene by editing its corresponding representation.
 </p></div>
 <br><br>
 
@@ -79,7 +81,9 @@ BODY {
     Given a number of images taken from different camera poses, novel view synthetic aims to produce realistic image of the scene from
     novel angles[1]. Recently, NeRF [2] makes significant progress in this area by utilizing neural scene representation. It takes as input
     a 5D camera pose representation and uses scene-specific multi-layer perceptrons (MLPs) to represent the whole scene. Compared to explict representation like
-    point clouds and voxels, this representation is compact and able to reconstruct higher resolution images.
+    point clouds and voxels, this representation is compact and able to reconstruct higher resolution images. We use two approaches to investigate and visualize
+    the edited representation, and conduct experiments to show that our approaches can effectively study and manipulate the NeRF
+    representation.
     <br>
         <br>
 
